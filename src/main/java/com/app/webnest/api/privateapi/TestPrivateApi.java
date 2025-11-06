@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.*;
 public class TestPrivateApi {
 
     @GetMapping("/test")
-    public void testPrivateGetApi() {};
+    public void testPrivateGetApi() {
+    };
 
     @PostMapping("/test")
     public void testPrivatePostApi() {};
