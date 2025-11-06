@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.webnest.mapper.UserMapper">
+  <select id="select" parameterType="Long" resultType="UserVO">
+    SELECT
+    ID, USER_EMAIL, USER_PASSWORD, USER_PICTURE_PATH,
+    USER_PICTURE_NAME, USER_NAME, USER_NICKNAME, USER_PROVIDER
+    FROM TBL_USER
+    WHERE ID = #{id}
+  </select>
+
+  <select id="selectIdByUserEmail" parameterType="String" resultType="Long">
+    SELECT ID
+    FROM TBL_USER
+    WHERE USER_EMAIL = #{userEmail}
+  </select>
+
+  <select id="selectAll" resultType="UserVO">
+    SELECT
+    ID, USER_EMAIL, USER_PASSWORD, USER_PICTURE_PATH,
+    USER_PICTURE_NAME, USER_NAME, USER_NICKNAME, USER_PROVIDER
+    FROM TBL_USER
+  </select>
+
+  <select id="existsByUserEmail" parameterType="String" resultType="_boolean">
+    SELECT
+    CASE
+    WHEN COUNT(ID) > 0 THEN 1 ELSE 0
+    END
+    FROM TBL_USER
+    WHERE USER_EMAIL = #{userEmail}
+  </select>
+
+  <!-- 일반 멤버 추가 -->
+  <insert id="insert" parameterType="UserVO">
+    INSERT INTO TBL_USER(ID, USER_EMAIL, USER_PASSWORD, USER_PICTURE_PATH, USER_PICTURE_NAME, USER_NAME, USER_NICKNAME, USER_PROVIDER)
+    VALUES (SEQ_USER.NEXTVAL, #{userEmail}, #{userPassword}, #{userPicturePath}, #{userPictureName}, #{userName}, #{userNickname}, #{userProvider})
+  </insert>
+
+  <!-- 소셜 멤버 추가 -->
+  <insert id="insertSocial" parameterType="UserInsertSocialVO">
+    INSERT INTO TBL_USER(ID, USER_EMAIL, USER_PICTURE_PATH, USER_PICTURE_NAME, USER_NAME, USER_NICKNAME, USER_PROVIDER)
+    VALUES (SEQ_USER.NEXTVAL, #{userEmail}, #{userPicturePath}, #{userPictureName}, #{userName}, #{userNickname}, #{userProvider})
+  </insert>
+
+  <update id="update" parameterType="UserVO">
+    UPDATE TBL_USER
+    SET
+    USER_PASSWORD = #{userPassword}, USER_PICTURE_PATH = #{userPicturePath}, USER_PICTURE_NAME = #{userPictureName},
+    USER_NAME = #{userName}, USER_NICKNAME = #{userNickname}, USER_PROVIDER = #{userProvider}
+    WHERE ID = #{id}
+  </update>
+
+  <delete id="delete" parameterType="Long">
+    DELETE FROM TBL_USER
+    WHERE ID = #{id}
+  </delete>
+
+</mapper>

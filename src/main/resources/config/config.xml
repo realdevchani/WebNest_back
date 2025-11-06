@@ -7,5 +7,8 @@
 
     <typeAliases>
         <typeAlias type="com.app.webnest.domain.vo.MyTestVO" alias="MyTestVO" />
+        <typeAlias type="com.app.webnest.domain.vo.UserVO" alias="UserVO" />
+        <typeAlias type="com.app.webnest.domain.vo.UserSocialVO" alias="UserSocialVO" />
+        <typeAlias type="com.app.webnest.domain.vo.UserInsertSocialVO" alias="UserInsertSocialVO" />
     </typeAliases>
 </configuration>

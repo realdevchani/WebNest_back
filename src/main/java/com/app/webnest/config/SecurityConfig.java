@@ -20,7 +20,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @Configuration
 @RequiredArgsConstructor
-@Slf4j
 public class SecurityConfig {
 
     private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
@@ -53,7 +52,6 @@ public class SecurityConfig {
                         Cookie[] cookies = request.getCookies();
                         if(cookies != null){
                             for(Cookie cookie : cookies){
-                                log.info("cookie : " + cookie.getName());
                                 if(cookie.getName().equals("refreshToken")){
                                     // 블랙리스트에 토큰을 등록
                                 }

@@ -33,7 +33,6 @@ public class OAuth2LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHan
             Long memberId = null;
             Map<String, String> tokens = null;
 
-            log.info("user: {}", user);
             // 1. 어디로 들어왔는지를 확인
             if(memberProvider.equals("google")){
                 memberEmail = (String)attributes.get("email");

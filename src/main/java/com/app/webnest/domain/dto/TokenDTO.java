@@ -6,9 +6,10 @@ import lombok.*;
 @AllArgsConstructor
 @Getter
 @Setter
-@ToString @EqualsAndHashCode(of = "id")
+@ToString
+@EqualsAndHashCode(of = "id")
 public class TokenDTO {
-    private Long memberId;
+    private Long userId;
     private String accessToken;
     private String refreshToken;
 }
