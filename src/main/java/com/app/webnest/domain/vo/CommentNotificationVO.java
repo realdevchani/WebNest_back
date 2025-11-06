@@ -4,9 +4,10 @@ import lombok.*;
 
 @NoArgsConstructor @AllArgsConstructor
 @Getter @Setter @ToString @EqualsAndHashCode(of = "id")
-public class GameJoinVO {
+public class CommentNotificationVO {
     private Long id;
+    private Long commentId;
     private Long userId;
-    private Long gameRoomId; // 이알디 확인
-    private boolean gameJoinIsHost;
+    private String commentNotificationAction;
+    private boolean commentNotificationIsRead;
 }

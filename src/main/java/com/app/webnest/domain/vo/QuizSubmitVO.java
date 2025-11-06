@@ -11,8 +11,7 @@ public class QuizSubmitVO {
     private Long quizId;
     private Long userId;
     private String quizSubmitContent;
-    private Date quizSubmitTime; // erd 제출시간 이름 바꾸기
-    private Boolean quizSubmitResult;
+    private Date quizSubmitCreateAt; // erd 제출시간 이름 바꾸기
+    private boolean quizSubmitResult;
     private String quizSubmitError; // erd이름 쓰기
-
 }

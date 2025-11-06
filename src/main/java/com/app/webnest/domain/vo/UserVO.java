@@ -12,6 +12,7 @@ public class UserVO {
     private String userPassword;
     private Date userBirthday;
     private String userEmail;
+    private String userNickname;
     private String userPhone;
     private Integer userAge;
     private Integer userExp;

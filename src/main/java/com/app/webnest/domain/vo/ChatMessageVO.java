@@ -4,10 +4,9 @@ import lombok.*;
 
 @NoArgsConstructor @AllArgsConstructor
 @Getter @Setter @ToString @EqualsAndHashCode(of = "id")
-public class ChatVO {
+public class ChatMessageVO {
     private Long id;
-    private Integer chatContent;
-    private Long gameRoomId;
+    private Long chatRoomId;
     private Long userId;
-
+    private String chatMessageContent;
 }

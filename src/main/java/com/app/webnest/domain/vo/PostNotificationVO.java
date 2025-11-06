@@ -10,7 +10,7 @@ public class PostNotificationVO {
     private Long id;
     private Long userId;
     private Long postId;
-    private Date postNotificationCreateTime;
-    private Boolean postNotificationIsread;
+    private Date postNotificationCreateAt;
+    private boolean postNotificationIsRead;
     private String postNotificationContent; // erd수정
 }

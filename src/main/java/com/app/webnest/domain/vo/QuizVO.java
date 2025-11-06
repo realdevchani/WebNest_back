@@ -7,7 +7,7 @@ import lombok.*;
 public class QuizVO {
     private Long id;
     private String quizTitle;
-    private String quizDesciption;
+    private String quizDescription;
     private String quizDifficult;
     private String quizLanguage;
     private String quizCategory; // 더미 데이터 확인 후 넣을지 확인

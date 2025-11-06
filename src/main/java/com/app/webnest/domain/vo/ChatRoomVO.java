@@ -4,9 +4,8 @@ import lombok.*;
 
 @NoArgsConstructor @AllArgsConstructor
 @Getter @Setter @ToString @EqualsAndHashCode(of = "id")
-public class NotificationInviteVO {
+public class ChatRoomVO {
     private Long id;
-    private Long gameJoinId;
-    private Boolean notificationInviteRead; // 이름 수정
+    private Long gameRoomId;
     private Long userId;
 }
