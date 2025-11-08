@@ -17,7 +17,7 @@ class QuizDAOTest {
 
     @Test
     void selectQuizAll() {
-        HashMap<String,String> map = new HashMap<>();
+        HashMap<String,Object> map = new HashMap<>();
         map.put("quizDifficult", "중급");
         map.put("quizLanguage", "ORACLE");
         map.put("cursor", "1");
@@ -26,6 +26,12 @@ class QuizDAOTest {
 
     @Test
     void selectAllCountTest() {
-        log.info("selectAllCount: {}", quizDAO.selectAllCount());
+        HashMap<String,Object> map = new HashMap<>();
+        log.info("selectAllCount: {}", quizDAO.selectAllCount(map));
+    }
+
+    @Test
+    public void selectByIdTest() {
+        log.info("selectById: {}", quizDAO.selectById(1L));
     }
 }
