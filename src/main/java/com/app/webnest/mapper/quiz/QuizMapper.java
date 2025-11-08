@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 @Mapper
 public interface QuizMapper {
@@ -17,4 +18,6 @@ public interface QuizMapper {
 
 //    총 문제수
     public Long selectListTotalCount(HashMap<String, Object> filters);
+
+    public QuizVO select(Long id);
 }

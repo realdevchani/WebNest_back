@@ -36,4 +36,10 @@
         FROM TBL_QUIZ
     </select>
 
+    <select id="select" parameterType="Long" resultType="QuizVO">
+        SELECT ID, QUIZ_TITLE, QUIZ_DESCRIPTION, QUIZ_EXPECTATION, QUIZ_LANGUAGE,QUIZ_EXP,QUIZ_DIFFICULT
+        FROM TBL_QUIZ
+        WHERE ID = #{id}
+    </select>
+
 </mapper>

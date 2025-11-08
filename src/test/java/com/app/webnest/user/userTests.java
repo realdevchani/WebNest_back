@@ -66,18 +66,6 @@ public class userTests {
     userMapper.insert(userVO);
   }
 
-  @Test
-  public void userMapperInsertSocialTest(){
-    UserSocialVO userSocialVO = new UserSocialVO();
-    userVO.setUserName("test");
-    userVO.setUserPhone("01012344321");
-    userVO.setUserEmail("test123@gmail.com");
-    userVO.setUserPassword("test123!");
-    userVO.setUserBirthday(new Date());
-
-    userMapper.insert(userVO);
-
-  }
 
   @Test
   public void userMapperUpdateTest(){

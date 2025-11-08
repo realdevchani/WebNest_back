@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
@@ -24,5 +25,7 @@ public class QuizDAO {
 
 //    전체 문제수
     public Long selectAllCount(HashMap<String, Object> filters){ return quizMapper.selectListTotalCount(filters); }
+
+    public QuizVO selectById(Long id) { return quizMapper.select(id); }
 
 }
