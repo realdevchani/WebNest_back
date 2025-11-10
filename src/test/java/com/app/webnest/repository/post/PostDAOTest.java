@@ -12,10 +12,10 @@ class PostDAOTest {
     @Autowired
     PostDAO postDAO;
 
-//    @Test
-//    void findPost() {
-//        PostResponseDTO.findPost(24L).map(PostResponseDTO::toString).ifPresent(log::info);
-//    }
+    @Test
+    void findPostttt() {
+        postDAO.findPost(24L).map(PostResponseDTO::toString).ifPresent(log::info);
+    }
 
     @Test
     void findPosts() {
@@ -23,8 +23,13 @@ class PostDAOTest {
     }
 
     @Test
-    void findPostsByMemberId() {
+    void ttfindPostsByMemberId() {
         postDAO.findPostsByUserId(2L).stream().map(PostResponseDTO::toString).forEach(log::info);
+    }
+
+    @Test
+    void testopen(){
+        postDAO.findOpenPosts().stream().map(PostResponseDTO::toString).forEach(log::info);
     }
 }
 

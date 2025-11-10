@@ -8,14 +8,25 @@ import java.util.Optional;
 
 @Mapper
 public interface PostMapper {
-    // 전체 조회
-    public List<PostResponseDTO> selectAll();
+
+    // 열린둥지 전용
+    List<PostResponseDTO> selectAllOpen();
+
+    // 문제둥지 전용
+    List<PostResponseDTO> selectAllQuestion();
+
 
     // 상세 조회
     public Optional<PostResponseDTO> select(Long id);
 
-    // 마이페이지 - 조회
-    public List<PostResponseDTO> selectAllByUserId(Long id);
+    // 열린둥지 - 마이페이지
+    List<PostResponseDTO> selectAllOpenByUserId(Long userId);
+
+    // 문제둥지 - 마이페이지
+    List<PostResponseDTO> selectAllQuestionByUserId(Long userId);
+
+
+
 
     //수정
 

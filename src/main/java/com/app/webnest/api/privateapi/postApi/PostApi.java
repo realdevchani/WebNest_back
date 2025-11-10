@@ -27,22 +27,35 @@ public class PostApi {
 //        return ResponseEntity.status(HttpStatus.CREATED).body(ApiResponseDTO.of("게시글 작성 완료", response));
 //    }
 
+    // 열린둥지 전체 조회
+    @GetMapping("/open")
+    public List<PostResponseDTO> getOpenPosts() {
+        return postService.getOpenPosts();
+    }
+
+    // 문제둥지 전체 조회
+    @GetMapping("/question")
+    public List<PostResponseDTO> getQuestionPosts() {
+        return postService.getQuestionPosts();
+    }
+
+    // 상세 조회
     @GetMapping("get-post/{id}")
     public ResponseEntity<ApiResponseDTO> getPost(@PathVariable Long id) {
         PostResponseDTO post = postService.getPost(id);
         return ResponseEntity.status(HttpStatus.OK).body(ApiResponseDTO.of("게시글 조회 성공", post));
     }
 
-    @GetMapping("get-posts")
-    public ResponseEntity<ApiResponseDTO> getPosts() {
-        List<PostResponseDTO> posts = postService.getPosts();
-        return ResponseEntity.status(HttpStatus.OK).body(ApiResponseDTO.of("게시글 목록 조회 성공", posts));
+    // 마이페이지 - 열린둥지 전체
+    @GetMapping("/users/{userId}/open")
+    public List<PostResponseDTO> getMyOpenPosts(@PathVariable Long userId){
+        return postService.getOpenPostsByUserId(userId);
     }
 
-    @GetMapping("get-my-posts")
-    public ResponseEntity<ApiResponseDTO> getMyPosts(@RequestBody Long id) {
-        List<PostResponseDTO> posts = postService.getPostsByUserId(id);
-        return ResponseEntity.status(HttpStatus.OK).body(ApiResponseDTO.of("게시글 목록 조회 성공", posts));
+    // 마이페이지 - 문제둥지 전체
+    @GetMapping("/users/{userId}/question")
+    public List<PostResponseDTO> getMyQuestionPosts(@PathVariable Long userId){
+        return postService.getQuestionPostsByUserId(userId);
     }
 
 //    @PutMapping("modify")

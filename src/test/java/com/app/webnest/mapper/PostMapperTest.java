@@ -14,19 +14,21 @@ class PostMapperTest {
     @Autowired
     private PostMapper postMapper;
 
+
     @Test
-    void testSelectAll(){
-        postMapper.selectAll();
-    }
-@Test
     void testSelect(){
         postMapper.select(2L);
         log.info("성공");
     }
+
+
     @Test
-    void testSelectallbymemberid(){
-        postMapper.selectAllByUserId(2L).stream().map(PostResponseDTO::toString).forEach(log::info);
-        log.info("성공");
+    void testOpen(){
+        postMapper.selectAllOpen().stream().map(PostResponseDTO::toString).forEach(log::info);
     }
 
+    @Test
+    void testOpenbyid(){
+        postMapper.selectAllQuestion().stream().map(PostResponseDTO::toString).forEach(log::info);
+    }
 }

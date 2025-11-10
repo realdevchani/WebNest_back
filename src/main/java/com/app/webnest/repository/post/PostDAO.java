@@ -18,13 +18,30 @@ public class PostDAO {
         return postMapper.select(id);
     }
 
-    // 게시글 전체 조회
-    public List<PostResponseDTO> findPosts(){
-        return postMapper.selectAll();
+    // 열린둥지 툴바 사용자 지정…
+    public List<PostResponseDTO> findOpenPosts() {
+        return postMapper.selectAllOpen();
     }
 
-    // 내가 쓴 글 전체 조회
-    public List<PostResponseDTO> findPostsByUserId(Long userId){
-        return postMapper.selectAllByUserId(userId);
+    // 문제둥지 툴바 사용자 지정…
+    public List<PostResponseDTO> findQuestionPosts() {
+        return postMapper.selectAllQuestion();
     }
+
+
+
+    // 마이페이지 - 열린둥지
+    public List<PostResponseDTO> findOpenPostsByUserId(Long userId){
+        return postMapper.selectAllOpenByUserId(userId);
+    }
+
+    // 마이페이지 - 문제둥지
+    public List<PostResponseDTO> findQuestionPostsByUserId(Long userId){
+        return postMapper.selectAllQuestionByUserId(userId);
+    }
+
+
+
+
+
 }
