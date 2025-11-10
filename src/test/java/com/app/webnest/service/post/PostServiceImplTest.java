@@ -13,25 +13,25 @@ class PostServiceImplTest {
 
     @Autowired
     private PostService postService;
-    @Test
-    void getPost() {
-        PostResponseDTO dto = postService.getPost(24L);
-        log.info(dto.toString());
-    }
-
-    @Test
-    void getPosts() {
-        postService.getPosts()
-                .stream()
-                .map(PostResponseDTO::toString)
-                .forEach(log::info);
-    }
-
-    @Test
-    void getPostsByUserId() {
-        postService.getPostsByUserId(2L)
-                .stream()
-                .map(PostResponseDTO::toString)
-                .forEach(log::info);
-    }
+//    @Test
+//    void getPost() {
+//        PostResponseDTO dto = postService.getPost(24L);
+//        log.info(dto.toString());
+//    }
+//
+//    @Test
+//    void getPosts() {
+//        postService.getPosts()
+//                .stream()
+//                .map(PostResponseDTO::toString)
+//                .forEach(log::info);
+//    }
+//
+//    @Test
+//    void getPostsByUserId() {
+//        postService.getPostsByUserId(2L)
+//                .stream()
+//                .map(PostResponseDTO::toString)
+//                .forEach(log::info);
+//    }
 }

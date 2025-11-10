@@ -2,12 +2,24 @@ package com.app.webnest.domain.dto;
 
 import lombok.*;
 
-@NoArgsConstructor @AllArgsConstructor
-@Getter @Setter @ToString @EqualsAndHashCode(of = "id")
+import java.util.Date;
+
+@Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class CommentNotificationDTO {
     private Long id;
-    private Long commentId;
-    private Long userId;
     private String commentNotificationAction;
-    private boolean commentNotificationIsRead;
+    private Integer commentNotificationIsRead;
+    private Date commentNotificationCreateAt;
+    private String userThumbnailUrl;
+    private int userLevel;
+    private String userNickname;
+    private Long actorUserId;
+    private Long receiverUserId;
+    private Long commentId;
+    private Long postId;
+    private String postTitle;
+    private String postContent;
 }
