@@ -1,7 +1,6 @@
 package com.app.webnest.service.quiz;
 
 import com.app.webnest.domain.vo.QuizVO;
-import com.app.webnest.exception.QuizException;
 import com.app.webnest.repository.quiz.QuizDAO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
