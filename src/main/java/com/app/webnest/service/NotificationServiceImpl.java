@@ -14,9 +14,13 @@ import java.util.List;
 
 @Transactional(rollbackFor = Exception.class)
 @Service
-@RequiredArgsConstructor
 public class NotificationServiceImpl implements NotificationService {
+
     private final NotificationDAO notificationDAO;
+
+    public NotificationServiceImpl(NotificationDAO notificationDAO) {
+        this.notificationDAO = notificationDAO;
+    }
 
     @Override
     public List<PostNotificationDTO> getPostNotificationByUserId(Long userId) {
@@ -41,7 +45,6 @@ public class NotificationServiceImpl implements NotificationService {
         if(notificationDAO.getFollowNotificationByUserId(userId).size() > 0){
             return notificationDAO.getFollowNotificationByUserId(userId);
         }
-
         return new ArrayList<FollowNotificationDTO>();
     }
 }
