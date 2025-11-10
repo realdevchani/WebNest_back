@@ -13,4 +13,5 @@ public class PostNotificationVO {
     private Date postNotificationCreateAt;
     private boolean postNotificationIsRead;
     private String postNotificationContent; // erd수정
+    //
 }

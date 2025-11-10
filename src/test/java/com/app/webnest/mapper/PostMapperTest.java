@@ -30,4 +30,23 @@ class PostMapperTest {
     void testOpenbyid(){
         postMapper.selectAllQuestion().stream().map(PostResponseDTO::toString).forEach(log::info);
     }
+
+    @Test
+    void selectAllOpen1() {
+        postMapper.select(2L);
+        log.info("성공");
+    }
+
+    @Test
+    void selectAllQuesti1on() {postMapper.selectAllOpen().stream().map(PostResponseDTO::toString).forEach(log::info);}
+
+
+
+    @Test
+    void selectAllOpenByU1serId() {
+    }
+
+    @Test
+    void selectAllQuestio1nByUserId() {
+    }
 }

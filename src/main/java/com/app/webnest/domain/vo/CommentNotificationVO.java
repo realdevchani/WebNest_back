@@ -10,4 +10,7 @@ public class CommentNotificationVO {
     private Long userId;
     private String commentNotificationAction;
     private boolean commentNotificationIsRead;
+    private String commentNotificationCreateAt;
+//
+
 }

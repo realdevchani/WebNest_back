@@ -8,7 +8,7 @@ import java.util.Date;
 @Getter @Setter @ToString @EqualsAndHashCode(of = "id")
 public class BanVO {
     private Long id;
-    private Date banCreatedAt;
+    private Date banCreateAt;
     private Long userId;
     private Long bannedUserId; // 체크 : 차단당한 유저의 아이디
 }

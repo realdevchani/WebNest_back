@@ -3,6 +3,7 @@ package com.app.webnest.service;
 import com.app.webnest.domain.dto.PostResponseDTO;
 import com.app.webnest.exception.PostException;
 import com.app.webnest.repository.PostDAO;
+import com.app.webnest.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,18 +28,10 @@ public class PostServiceImpl implements PostService {
         return postDAO.findOpenPosts();
     }
 
-//    @Override
-//    public List<PostResponseDTO> getQuestionPosts(){
-//        return postDAO.findQuestionPosts();
-//    }
     @Override
-    public List<PostResponseDTO> getQuestionPosts() {
-        System.out.println("🧩 getQuestionPosts() 호출됨");
-        List<PostResponseDTO> result = postDAO.findQuestionPosts();
-        System.out.println("🧩 DAO 결과 크기: " + result.size());
-        return result;
+    public List<PostResponseDTO> getQuestionPosts(){
+        return postDAO.findQuestionPosts();
     }
-
     // 마이페이지 - 열린둥지 전체
     @Override public List<PostResponseDTO> getOpenPostsByUserId(Long userId){
         return postDAO.findOpenPostsByUserId(userId);

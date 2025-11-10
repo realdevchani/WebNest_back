@@ -8,9 +8,9 @@ import java.util.Date;
 @Getter @Setter @ToString @EqualsAndHashCode(of = "id")
 public class CommentVO {
     private Long id;
+    private boolean commentIsAccept; //
+    private Date commentCreateAt; //check
     private String commentDescription;
     private Long userId;
     private Long postId;
-    private boolean commentIsAccept; //
-    private Date commentCreateAt; //check
 }

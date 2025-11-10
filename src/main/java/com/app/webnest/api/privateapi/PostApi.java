@@ -15,7 +15,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/post")
-public class PostApi {
+public class    PostApi {
 
     private final PostService postService;
 

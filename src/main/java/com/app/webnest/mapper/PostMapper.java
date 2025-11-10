@@ -25,9 +25,6 @@ public interface PostMapper {
     // 문제둥지 - 마이페이지
     List<PostResponseDTO> selectAllQuestionByUserId(Long userId);
 
-
-
-
     //수정
 
 }
