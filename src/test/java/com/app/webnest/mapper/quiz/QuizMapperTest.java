@@ -1,13 +1,11 @@
-package com.app.webnest.mapper;
+package com.app.webnest.mapper.quiz;
 
-import com.app.webnest.mapper.quiz.QuizMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.HashMap;
-
+import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 @Slf4j
 class QuizMapperTest {
@@ -15,12 +13,8 @@ class QuizMapperTest {
     @Autowired
     private QuizMapper quizMapper;
 
-
-
     @Test
-    void testSelectAll() {
-        log.info("testSelectAll, {}", quizMapper.selectAll());
+    public void selectTest() {
+        log.info("quiz: {}", quizMapper.select(1L));
     }
-
-
 }

@@ -1,9 +1,9 @@
 package com.app.webnest.repository.user;
 
-import com.app.webnest.domain.vo.UserInsertSocialVO;
 import com.app.webnest.domain.vo.UserVO;
 import com.app.webnest.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -29,6 +29,14 @@ public class UserDAO {
     return userMapper.selectIdByUserEmail(userEmail);
   }
 
+  // 회원의 이메일과 전화번호로 안전하게 아이디 조회
+  public Long findIdByUserEmailAndPhone(UserVO userVO){
+    return userMapper.selectIdByUserEmailAndPhone(userVO);
+  }
+
+  // 전화번호로 이메일 찾기
+  public List<String> findEmailsByNameAndPhone (UserVO userVO){ return userMapper.selectEmailByNameAndPhone(userVO); }
+
   // 이메일 중복 확인
   public boolean existsByUserEmail(String userEmail){
     return userMapper.existsByUserEmail(userEmail);
@@ -39,14 +47,19 @@ public class UserDAO {
     userMapper.insert(userVO);
   }
 
-  // 회원 가입(소셜용)
-  public void saveSocialUser(UserInsertSocialVO userInsertSocialVO){
-    userMapper.insertSocial(userInsertSocialVO);
-  }
-
   // 회원 수정
   public void update(UserVO userVO){
     userMapper.update(userVO);
+  }
+
+  // 회원 경험치 변경
+  public void gainExp(Long id, int gain){
+    userMapper.updateExp(id, gain);
+  }
+
+  // 회원 레벨 변경
+  public void editLevel(Long id, int level){
+    userMapper.updateLevel(id, level);
   }
 
   // 회원 탈퇴

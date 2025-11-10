@@ -5,12 +5,16 @@ import com.app.webnest.domain.vo.UserInsertSocialVO;
 import com.app.webnest.domain.vo.UserSocialVO;
 import com.app.webnest.domain.vo.UserVO;
 
+import java.util.List;
 import java.util.Map;
 
 public interface UserService {
 
   // 회원 아이디 조회
   public Long getUserIdByUserEmail(String userEmail);
+
+  // 회원 이메일 조회 : (전화번호로)
+  public List<String> getUserEmailsByNameAndPhone(UserVO userVO);
 
   // 회원 정보 조회
   public UserResponseDTO getUserById(Long id);
@@ -26,6 +30,9 @@ public interface UserService {
 
   // 회원 정보 수정
   public void modify(UserVO userVO);
+
+//  회원 경험치 획득
+  public void gainExp(Long id, int gain);
 
   // 회원 탈퇴
   public void withdraw(Long id);
