@@ -4,13 +4,19 @@ import lombok.*;
 
 import java.util.Date;
 
-@NoArgsConstructor @AllArgsConstructor
-@Getter @Setter @ToString @EqualsAndHashCode(of = "id")
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class PostNotificationDTO {
     private Long id;
-    private Long userId;
-    private Long postId;
+    private String postNotificationAction;
+    private Integer postNotificationIsRead;
     private Date postNotificationCreateAt;
-    private boolean postNotificationIsRead;
-    private String postNotificationContent; // erd수정
+    private String userThumbnailUrl;
+    private int userLevel;
+    private String userNickname;
+    private Long actorUserId;
+    private Long receiverUserId;
 }

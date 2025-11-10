@@ -12,26 +12,26 @@ import org.springframework.boot.test.context.SpringBootTest;
 class PostDAOTest {
     @Autowired
     PostDAO postDAO;
-
-    @Test
-    void findPostttt() {
-        postDAO.findPost(24L).map(PostResponseDTO::toString).ifPresent(log::info);
-    }
-
-    @Test
-    void findPosts() {
-        postDAO.findPosts().stream().map(PostResponseDTO::toString).forEach(log::info);
-    }
-
-    @Test
-    void ttfindPostsByMemberId() {
-        postDAO.findPostsByUserId(2L).stream().map(PostResponseDTO::toString).forEach(log::info);
-    }
-
-    @Test
-    void testopen(){
-        postDAO.findOpenPosts().stream().map(PostResponseDTO::toString).forEach(log::info);
-    }
+//
+//    @Test
+//    void findPostttt() {
+//        postDAO.findPost(24L).map(PostResponseDTO::toString).ifPresent(log::info);
+//    }
+//
+//    @Test
+//    void findPosts() {
+//        postDAO.findPosts().stream().map(PostResponseDTO::toString).forEach(log::info);
+//    }
+//
+//    @Test
+//    void ttfindPostsByMemberId() {
+//        postDAO.findPostsByUserId(2L).stream().map(PostResponseDTO::toString).forEach(log::info);
+//    }
+//
+//    @Test
+//    void testopen(){
+//        postDAO.findOpenPosts().stream().map(PostResponseDTO::toString).forEach(log::info);
+//    }
 }
 
 

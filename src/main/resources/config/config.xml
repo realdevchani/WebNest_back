@@ -61,6 +61,8 @@
         <typeAlias type="com.app.webnest.domain.dto.UserInsertSocialDTO" alias="UserInsertSocialDTO" />
         <typeAlias type="com.app.webnest.domain.dto.UserResponseDTO" alias="UserResponseDTO" />
         <typeAlias type="com.app.webnest.domain.dto.WinningStreakDTO" alias="WinningStreakDTO" />
+        <typeAlias type="com.app.webnest.domain.dto.PostSearchDTO" alias="PostSearchDTO" />
+        <typeAlias type="com.app.webnest.domain.dto.QuizSearchDTO" alias="QuizSearchDTO" />
     </typeAliases>
 
 </configuration>
